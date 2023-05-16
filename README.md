@@ -5,6 +5,10 @@ O Zustend é uma biblioteca que nos permite trabalhar com o gerenciamento de est
 
 https://zustand-demo.pmnd.rs/
 
+##Requisitos básicos:
+ <li>Ambiente React-native configurado na sua máquina.</li>
+ <li>Emulador Android ou IOS.</li>
+
 ## Rodando o projeto:
 
 Após clonar o projeto na sua máquina você precisa rodar os seguintes comandos.
