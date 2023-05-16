@@ -5,9 +5,10 @@ O Zustend é uma biblioteca que nos permite trabalhar com o gerenciamento de est
 
 https://zustand-demo.pmnd.rs/
 
-##Requisitos básicos:
- <li>Ambiente React-native configurado na sua máquina.</li>
- <li>Emulador Android ou IOS.</li>
+## Requisitos básicos:
+ - Ambiente React-native configurado na sua máquina.
+ - Emulador Android ou IOS.
+ - yarn instalado
 
 ## Rodando o projeto:
 
@@ -38,11 +39,35 @@ yarn start
 ```
 yarn ios
 ```
-
 ## Rodar com o emulador Android:
 
 ```
 yarn android
+```
+
+## Como criar um estado global com Zustand:
+
+```
+import {create} from 'zustand';
+
+// Criamos com o método create definimos um set
+const useUserStore = create<State>(set => ({
+  // Configuramos que o estado começa com um valor de um array vazio.
+  users: [],
+  
+  // Adicionando um método para o estado
+  addUser: (user: UserType) => {
+
+    // Usamos o set state para adicionar dentro do array de users tudo que já tem dentro dele usando o spread ... e mais o usuário novo criado.
+    set(state => ({
+      users: [...state.users, user],
+    }));
+  },
+
+  // Precisamos exportar o estado para que ele possa ser utilizado nos demais lugares...
+  export default useUserStore;
+
+}));
 ```
 
 
