@@ -70,6 +70,26 @@ const useUserStore = create<State>(set => ({
 }));
 ```
 
+## Consumindo o estado dentro dos componentes:
+
+```
+  // Chamando o estado global no componente:
+  const users = useUserStore(state => state.users);
+  const addUser = useUserStore(state => state.addUser);
+
+  // Consumindo o array de users:
+
+  {users?.map(user => (
+          <User key={Math.random()} name={user.name} email={user.email} />
+        ))}
+
+  // Consumindo método addUser criado
+
+  addUser({
+      name,
+      email,
+    });
+```
 
 
 
